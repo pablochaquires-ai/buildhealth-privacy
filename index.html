@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build Health — Seguridad y Privacidad</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#333;line-height:1.7;background:#fff}
+.header{background:#0F6E56;padding:40px 20px;text-align:center}
+.header h1{color:#fff;font-size:14px;font-weight:300;letter-spacing:6px;margin-bottom:4px}
+.header h2{color:#fff;font-size:24px;font-weight:800;letter-spacing:6px;margin-bottom:16px}
+.header p{color:rgba(255,255,255,0.8);font-size:14px}
+.container{max-width:720px;margin:0 auto;padding:32px 20px 60px}
+h3{color:#0F6E56;font-size:20px;margin:32px 0 12px;font-weight:600}
+h4{color:#0F6E56;font-size:16px;margin:24px 0 8px;font-weight:600}
+p{margin-bottom:14px;font-size:15px}
+ul{margin:0 0 16px 24px}
+li{margin-bottom:8px;font-size:15px}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+th{background:#0F6E56;color:#fff;padding:10px 12px;text-align:left;font-weight:500}
+td{padding:10px 12px;border-bottom:1px solid #e0e0e0}
+tr:nth-child(even) td{background:#f9f9f9}
+.highlight{background:#e8f5e9;border-left:4px solid #0F6E56;padding:16px;margin:16px 0;border-radius:0 8px 8px 0}
+.warning{background:#fff3e0;border-left:4px solid #f57c00;padding:16px;margin:16px 0;border-radius:0 8px 8px 0}
+.faq{margin:20px 0}
+.faq dt{font-weight:600;color:#0F6E56;margin-top:16px;font-size:15px}
+.faq dd{margin:6px 0 16px;font-size:15px}
+.footer{text-align:center;padding:40px 20px;color:#999;font-size:13px;border-top:1px solid #eee;margin-top:40px}
+strong{color:#0F6E56}
+</style>
+</head>
+<body>
+
+<div class="header">
+<h1>BUILD</h1>
+<h2>HEALTH</h2>
+<p>Documento de Seguridad y Privacidad para Profesionales de la Salud</p>
+</div>
+
+<div class="container">
+
+<h3>1. ¿Qué es Build Health?</h3>
+<p>Build Health es una plataforma de historia clínica digital donde el paciente es el dueño real de su historial médico. El profesional de salud dicta o escribe en lenguaje natural, y la plataforma estructura, clasifica y organiza automáticamente la información clínica.</p>
+<p>La plataforma es <strong>gratuita para médicos y pacientes</strong>. No se cobra por usarla, no hay suscripción ni costos ocultos.</p>
+
+<h3>2. ¿Cómo se protegen los datos?</h3>
+<p>La seguridad de los datos clínicos es la prioridad absoluta de Build Health. El sistema fue diseñado desde cero con los estándares más exigentes de protección de información médica.</p>
+
+<h4>2.1 Separación de identidad y datos clínicos</h4>
+<p>El diseño de seguridad más crítico del sistema: la identidad del paciente (nombre, DNI) y sus datos clínicos (diagnósticos, tratamientos) nunca conviven en la misma base de datos.</p>
+
+<table>
+<tr><th>Mecanismo</th><th>Descripción</th></tr>
+<tr><td><strong>Bases separadas</strong></td><td>La base de identidad (DNI, nombre) y la base clínica (registros, diagnósticos) están separadas físicamente.</td></tr>
+<tr><td><strong>Token anónimo</strong></td><td>Solo se vinculan mediante un token anónimo. Si alguien accede a la base clínica, no sabe de quién son los datos.</td></tr>
+<tr><td><strong>Encriptación</strong></td><td>Todos los datos están encriptados en tránsito (TLS 1.3) y en reposo (AES-256).</td></tr>
+<tr><td><strong>Acceso doble</strong></td><td>Para cruzar identidad con datos clínicos se necesitaría acceder a ambas bases simultáneamente, lo cual es prácticamente imposible.</td></tr>
+</table>
+
+<h4>2.2 Trazabilidad completa</h4>
+<p>Cada acción en Build Health queda registrada con fecha, hora y autor. El sistema mantiene 5 capas de registro:</p>
+
+<table>
+<tr><th>Capa</th><th>Descripción</th></tr>
+<tr><td><strong>1. Fuente primaria</strong></td><td>Audio original o texto libre del médico. NUNCA se modifica ni elimina. Es la evidencia legal del acto médico.</td></tr>
+<tr><td><strong>2. Transcripción</strong></td><td>Conversión exacta del audio a texto, palabra por palabra. También inmutable.</td></tr>
+<tr><td><strong>3. Estructura IA</strong></td><td>La IA clasifica en campos: diagnóstico, tratamiento, medicación. Cada campo referencia su fuente original.</td></tr>
+<tr><td><strong>4. Resumen clínico</strong></td><td>Síntesis narrativa para el próximo médico. Cada párrafo referencia los registros fuente.</td></tr>
+<tr><td><strong>5. Log de accesos</strong></td><td>Registro completo de quién accedió, cuándo, qué modificó. Trazabilidad forense completa.</td></tr>
+</table>
+
+<h3>3. ¿Qué leyes cumple Build Health?</h3>
+
+<table>
+<tr><th>Normativa</th><th>Cómo se cumple</th></tr>
+<tr><td><strong>Ley 25.326 — Datos Personales</strong></td><td>Los datos de salud son datos sensibles. Build Health requiere consentimiento explícito y anonimización irreversible para cualquier uso comercial.</td></tr>
+<tr><td><strong>Ley 26.529 — Derechos del Paciente</strong></td><td>El paciente tiene derecho a su historia clínica. Build Health lo implementa nativamente: el historial pertenece al paciente, no a la institución.</td></tr>
+<tr><td><strong>Ley 27.553 — Receta Electrónica</strong></td><td>Build Health cumple los requisitos de autenticación y trazabilidad exigidos por la norma.</td></tr>
+<tr><td><strong>RENAPER — Identidad Digital</strong></td><td>Validación de identidad del paciente y firma digital de registros clínicos.</td></tr>
+</table>
+
+<h3>4. ¿Qué hace la IA y qué NO hace?</h3>
+
+<h4>Lo que la IA hace:</h4>
+<ul>
+<li>Estructura el texto libre del médico en campos clínicos (diagnóstico, tratamiento, medicación).</li>
+<li>Sugiere códigos CIE-10 basados en lo que el médico escribió. Siempre marcados como SUGERENCIA.</li>
+<li>Genera un resumen clínico para el próximo médico, siempre vinculado a la fuente original.</li>
+<li>Detecta posibles interacciones medicamentosas y genera alertas.</li>
+</ul>
+
+<div class="warning">
+<h4>Lo que la IA NO hace:</h4>
+<ul>
+<li><strong>NO diagnostica.</strong> Solo estructura lo que el médico decide registrar.</li>
+<li><strong>NO reemplaza el registro original.</strong> Lo complementa y resume.</li>
+<li><strong>NO toma decisiones clínicas.</strong> El médico siempre tiene la última palabra.</li>
+<li><strong>NO modifica ni elimina datos.</strong> Toda interpretación es auditable hasta su fuente primaria.</li>
+</ul>
+</div>
+
+<h3>5. ¿Quién puede ver los datos del paciente?</h3>
+
+<table>
+<tr><th>Actor</th><th>Qué puede ver</th><th>Condición</th></tr>
+<tr><td><strong>Médico tratante</strong></td><td>Historia clínica completa del paciente</td><td>El paciente debe autorizar el acceso</td></tr>
+<tr><td><strong>Médico de guardia</strong></td><td>Datos críticos: alergias, medicación, crónicas</td><td>Acceso de urgencia con DNI del paciente</td></tr>
+<tr><td><strong>El propio paciente</strong></td><td>Todo su historial completo</td><td>Siempre, es su derecho legal</td></tr>
+<tr><td><strong>Obra social</strong></td><td>Datos agregados y anonimizados</td><td>Nunca datos individuales identificables</td></tr>
+<tr><td><strong>Laboratorios</strong></td><td>Estadísticas de prescripción anonimizadas</td><td>Sin datos personales, irreversible</td></tr>
+</table>
+
+<h3>6. ¿Cómo se protege al médico?</h3>
+<div class="highlight">
+<ul>
+<li>Su dictado original es evidencia legal de lo que realmente dijo y ordenó.</li>
+<li>Ninguna interpretación automática puede alterar su registro real.</li>
+<li>La trazabilidad de 5 capas es la defensa ante cualquier demanda o auditoría.</li>
+<li>El sistema cumple con el principio de explicabilidad de la IA exigido por regulaciones emergentes.</li>
+<li>Cada resumen de IA puede auditarse hasta la fuente primaria original con un clic.</li>
+</ul>
+</div>
+
+<h3>7. ¿Qué pasa con los datos anonimizados?</h3>
+<p>Build Health puede generar datos anonimizados para inteligencia sanitaria. Este proceso es irreversible:</p>
+<ul>
+<li>Se eliminan nombre, DNI y datos de contacto.</li>
+<li>La edad se generaliza en rangos (30-35), no años exactos.</li>
+<li>La ubicación se generaliza a provincia, no localidad.</li>
+<li>Se aplica K-anonimato: cada registro es indistinguible de al menos otros K registros similares.</li>
+<li>El proceso de anonimización tiene su propio log de auditoría independiente.</li>
+</ul>
+<p><strong>Ningún dato anonimizado puede ser revertido para identificar a un paciente o médico individual.</strong></p>
+
+<h3>8. Preguntas frecuentes</h3>
+
+<dl class="faq">
+<dt>¿Puedo confiar en que mis registros no se van a modificar?</dt>
+<dd>Sí. El registro original (audio o texto) es inmutable. Nadie puede modificarlo, ni siquiera Build Health. Es su protección legal como profesional.</dd>
+
+<dt>¿Qué pasa si la IA interpreta mal lo que dicté?</dt>
+<dd>Usted revisa y aprueba cada registro antes de firmarlo. Si la IA comete un error, lo corrige con un clic. Su dictado original siempre queda como evidencia.</dd>
+
+<dt>¿Mis pacientes van a ver lo que escribo?</dt>
+<dd>Sí, el paciente tiene derecho legal a ver su historia clínica (Ley 26.529). Build Health implementa esto de forma transparente: el paciente ve el resumen en lenguaje claro, no las notas técnicas internas.</dd>
+
+<dt>¿Build Health vende mis datos personales?</dt>
+<dd>No. Los datos personales nunca se venden. Solo se comercializan estadísticas anonimizadas e irreversibles de tendencias sanitarias, sin ningún dato que permita identificar a un médico o paciente.</dd>
+
+<dt>¿Qué pasa si dejo de usar Build Health?</dt>
+<dd>Sus registros permanecen en el sistema porque pertenecen al paciente. Usted puede solicitar la eliminación de su cuenta profesional en cualquier momento, pero los registros clínicos que generó siguen siendo parte del historial del paciente.</dd>
+</dl>
+
+<h3>Política de Privacidad</h3>
+<p>Build Health recopila y procesa datos personales y de salud exclusivamente con fines sanitarios, en cumplimiento de la Ley 25.326 de Protección de Datos Personales, la Ley 26.529 de Derechos del Paciente y la Ley 27.553 de Receta Electrónica.</p>
+<p>Al utilizar la plataforma, el usuario consiente el tratamiento de sus datos conforme a los términos descriptos en este documento. Los datos de salud son considerados datos sensibles y reciben el máximo nivel de protección.</p>
+<p>El usuario puede ejercer sus derechos de acceso, rectificación y supresión de datos personales contactando a <strong>pablo@buildhealth.com.ar</strong>.</p>
+<p>Build Health no comparte datos personales identificables con terceros. Los datos anonimizados para fines estadísticos y de inteligencia sanitaria son procesados de forma irreversible, garantizando la imposibilidad de reidentificación.</p>
+
+<div class="footer">
+<p>BUILD HEALTH — Tu salud, conectada y protegida</p>
+<p>© 2026 Build Health — Ecosistema Build</p>
+<p>Contacto: pablo@buildhealth.com.ar</p>
+</div>
+
+</div>
+</body>
+</html>
